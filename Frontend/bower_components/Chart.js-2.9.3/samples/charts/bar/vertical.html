@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Bar Chart</title>
+	<script src="../../../dist/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div>
+		
+		<div  style="width: 75%;">
+		<canvas id="chartjs-4" class="chartjs"></canvas>
+<script>
+new Chart(document.getElementById("chartjs-4"), {
+    "type":"doughnut", "data": {
+        "labels":["Red", "Blue", "Yellow"], "datasets":[ {
+            "label": "My First Dataset", "data": [300, 50, 100], "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+        }
+        ]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Custom Chart Title'
+        }
+    }
+}
+
+);
+</script>
+		</div>
+
+	</div>
+
+	<div id="container" style="width: 75%;">
+		<canvas id="canvas-1"></canvas>
+	</div>
+	<script>
+		var MONTHS = ['Jul-2019', 'Aug-2019', 'Sep-2019', 'Oct-2019', 'Nov-2019', 'Dec-2019','Jan-2020', 'Feb-2020', 'Mar-2020', 'Apr-2020', 'May-2020', 'Jun-2020'];
+		var color = Chart.helpers.color;
+		var barChartData = {
+			labels: ['Jul-2019', 'Aug-2019', 'Sep-2019', 'Oct-2019', 'Nov-2019', 'Dec-2019','Jan-2020', 'Feb-2020', 'Mar-2020', 'Apr-2020', 'May-2020', 'Jun-2020'],
+			datasets: [{
+				label: 'Forecast',
+				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.red,
+				borderWidth: 1,
+				data: [
+					10, 20, 33, 4, 44, 55, 7, 4, 44, 55, 7, 99
+				]
+			}, {
+				label: 'Sala Sales',
+				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.blue,
+				borderWidth: 1,
+				data: [
+					98, 56, 3, 19, 3, 2, 22, 77, 12, 76, 12, 18
+				]
+			}]
+
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas-1').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'PCG'
+					}
+				}
+			});
+
+		};
+
+		
+
+
+	</script>
+</body>
+
+</html>

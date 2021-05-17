@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Registration</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="dist/css/lobibox.min.css"/>
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini" onload="getLastEmpID()">
+  <script src="js/main.js"></script>
+<div class="wrapper">
+
+  <!-- Left side column. contains the logo and sidebar -->
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper-reg">
+    <!-- Content Header (Page header) -->
+    <section class="content-header-login">
+      <div class="page-title">
+        <a class="logo">
+        
+      </a>
+      <br>
+        <h3>Register Yourself Here...</h3>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">      
+        
+        <div class="reg-box">
+          
+          <div class="box box-primary">
+            <div class="box-header with-border text-center">
+              <h3 class="box-title">Registeration Form</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="login box-body">
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="Firsrname">First Name</label>
+                  <input type="text" class="form-control" id="Firstname" placeholder="Enter First Name">
+                </div>
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
+                </div>
+                                
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="text" class="form-control" id="exampleInputUsername" placeholder="Enter Email">
+                </div>
+
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="empID">Employee ID</label>
+                  <input type="text" class="form-control" id="empID" placeholder="Enter Employee ID" readonly>
+                </div>
+
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="exampleInputOrganisation">Organisation</label>
+                  <input type="text" class="form-control" id="OrganisationName" placeholder="Enter Organisation Name">
+                </div>
+                
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                </div>
+
+                <div class="form-group form-group col-md-6 col-lg-6 col-xs-12">
+                  <label for="exampleInputPassword1">Re-Enter Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-enter Password">
+                </div>
+
+                <div class="form-group form-group col-md-12 col-lg-12 col-xs-12">
+                  <a onclick="saveDetails()" type="button" class="btn btn-primary">Register</a>
+                </div>            
+                        
+              </div>
+              
+            </form>
+          </div>
+        </div>
+        
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="bower_components/raphael/raphael.min.js"></script>
+<script src="bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<script src="dist/js/lobibox.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="myModalAlert" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alert</h4>
+      </div>
+      <div class="modal-body">
+        <p id="alertBox">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu lacus maximus, sodales lectus et, mattis ante. Curabitur suscipit, justo bibendum ultricies pulvinar, ipsum augue pharetra mi, sit amet malesuada arcu purus eu lorem. Pellentesque elementum finibus dictum. Vestibulum malesuada ipsum vel fringilla congue. Curabitur imperdiet enim vel nulla feugiat, a vulputate turpis mattis. Etiam vel lacus blandit, elementum diam id, sagittis massa.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>
